@@ -575,7 +575,7 @@ Seal peab olema:<br>
 - Suur pealkiri "Tulevikuratas" koos alamtekstiga "Kaardista muutuse võimalikud mõjud"<br>
 - Sisestusväli, kuhu kasutaja saab kirjutada ühe muutuse, trendi või sündmuse<br>
 - Suur nupp "Genereeri tulevikuratas" koos sümboliga 🔮<br>
-- Kui nuppu vajutatakse, näita tulemust visuaalse ringina kus keskel on sisestatud muutud ning järgmistel ringidel esimest, teist ja kolmandat järku mõjud<br>
+- Kui nuppu vajutatakse, näita tulemust visuaalse ringina kus keskel on sisestatud muutus ning järgmistel ringidel esimest, teist ja kolmandat järku mõjud<br>
 - Tulemus peab sisaldama keskset muutust ning selle ümber esimese, teise ja kolmanda taseme mõjusid<br>
 - Iga mõju olgu eraldi kastis või ringis ning seosed olgu visuaalselt arusaadavad<br>
 - Kasuta professionaalset tumedat teemat siniste aktsentvärvidega<br>
@@ -614,11 +614,11 @@ Seal peab olema:<br>
   <div>
     <p style="color: var(--green); font-weight: 600; font-size: 0.8em;">✅ HEA:</p>
     <div class="prompt-box good-prompt" style="font-size: 0.6em;">
-"Loo veebirakendus tumeda teemaga, sisestusväljadega nime ja hobide jaoks, genereerimise nupuga, ja näita tulemusi kujundatud kaardil startupi nime, loosungi ja väärtusega"
+"Loo veebirakendus tumeda teemaga, sisestusväljadega analüüsitava muutuse jaoks, genereerimise nupuga, ja näita tulemusi kujundatud ringil muutuse nime ning esimese, teise ja kolmanda taseme mõjudega"
     </div>
   </div>
   <div class="mantra" style="font-size: 1em;">
-    Mida täpsemalt sa kirjeldad,<br>seda paremat tulemust sa saad
+    Mida täpsemalt sa kirjeldad,<br>seda parema tulemuse sa saad
   </div>
 </section>
 
@@ -638,11 +638,20 @@ Seal peab olema:<br>
 <section>
   <h2>Tase 2: Lisa AI</h2>
   <div class="prompt-box good-prompt" style="font-size: 0.52em;">
-Asenda eelkirjutatud startup-ideed AI-genereeritud ideedega, kasutades Gemini API-t.<br>
-Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Ära kirjuta võtit otse koodi sisse.<br><br>
-Kui kasutaja vajutab "Genereeri", saada tema nimi, eriala ja hobid Gemini API-le koos selle juhisega:<br><br>
-"Sa oled satiirilise startup-ideede generaator. Loo ÜKS naljakas aga üllatavalt usutav startup-idee, mis põhineb kasutaja taustal. Lisa: loominguline startupi nimi, tabav loosungitekst, 2-3-lauseline liftikõne ülepaisutatud Silicon Valley stiilis, absurdselt kõrge väärtuse hinnang ja üherealine investori reaktsioon. Ole naljakas. Tagasta JSON-vormingus väljadega: nimi, loosung, kone, vaartus, investoritsitaat."<br><br>
-Lisa nupp "Genereeri uus idee".
+Asenda eelkirjutatud näidismõjud AI-genereeritud tulevikurattaga, kasutades Gemini API-t.
+Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Ära kirjuta võtit otse koodi sisse.
+
+Kui kasutaja vajutab "Genereeri tulevikuratas", saada Gemini API-le kasutaja sisestatud muutus, trend või sündmus koos selle juhisega:
+
+"Sa oled tulevikumõtlemise assistent. Loo ühe sisestatud muutuse või trendi põhjal tulevikuratas. Too välja:
+- keskne muutus
+- 4 esimese taseme mõju
+- iga esimese taseme mõju kohta 2 teise taseme mõju
+- iga teise taseme mõju kohta 1 kolmanda taseme mõju
+
+Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja arusaadavalt eesti keeles. Väldi väga pikki lauseid. Tagasta tulemus JSON-vormingus."
+Näita tulemust visuaalse tulevikurattana või selgelt eristatud plokkidena.
+Lisa nupp "Genereeri uus tulevikuratas".
   </div>
   <p style="font-size: 0.7em; color: var(--accent3);">⚠️ API võti peab olema .env.local failis (lõime selle seadistamise ajal)</p>
 </section>
@@ -662,7 +671,7 @@ Lisa nupp "Genereeri uus idee".
     </div>
     <div class="step-box" style="font-size: 0.7em;">
       <strong style="color: var(--red);">Probleem:</strong> Kujundus on kole<br>
-      <strong style="color: var(--green);">Ütle:</strong> "Tulemuskaart näeb inetu välja. Tee see nagu esmaklassiline startup pitch-kaart: ümarad nurgad, gradientpiir ja parem vahedus."
+      <strong style="color: var(--green);">Ütle:</strong> "Tulemuskaart näeb inetu välja. Tee see nagu esmaklassiline tänapäevane rakendus: ümarad nurgad, gradientpiir ja parem vahedus."
     </div>
   </div>
   <div class="mantra" style="font-size: 1em;">
@@ -678,7 +687,7 @@ Lisa nupp "Genereeri uus idee".
   <h1 style="font-size: 2em;">Paus</h1>
   <p style="color: var(--dim);">15 minutit</p>
   <br>
-  <p style="font-size: 0.7em; color: #94a3b8;">Proovi oma äppi! Genereeri paar ideed.<br>Kui jäid maha — küsi naabrilt abi või kasuta ekraanil olevat päästeprompt'i.</p>
+  <p style="font-size: 0.7em; color: #94a3b8;">Proovi oma äppi! Genereeri paar tulevikuratast.<br></p>
 </section>
 
 <!-- ============================================ -->
