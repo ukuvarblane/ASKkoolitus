@@ -671,7 +671,7 @@ Lisa nupp "Genereeri uus tulevikuratas".
     </div>
     <div class="step-box" style="font-size: 0.7em;">
       <strong style="color: var(--red);">Probleem:</strong> Kujundus on kole<br>
-      <strong style="color: var(--green);">Ütle:</strong> "Tulemuskaart näeb inetu välja. Tee see nagu esmaklassiline tänapäevane rakendus: ümarad nurgad, gradientpiir ja parem vahedus."
+      <strong style="color: var(--green);">Ütle:</strong> "Tulevikuratas näeb inetu välja. Tee see nagu esmaklassiline tänapäevane rakendus: ümarad nurgad, gradientpiir ja parem vahedus."
     </div>
   </div>
   <div class="mantra" style="font-size: 1em;">
@@ -697,7 +697,12 @@ Lisa nupp "Genereeri uus tulevikuratas".
   <h2>Maha jäänud? Ära muretse!</h2>
   <p style="font-size: 0.8em; color: var(--dim);">Kopeeri see prompt — see paneb su aluse paika:</p>
   <div class="prompt-box good-prompt" style="font-size: 0.5em;">
-Loo Next.js veebirakendus nimega "IdeeTreiler". Tumeda teemaga. Sellel on kolm sisestusvälja (nimi, eriala, hobid) ja nupp "Genereeri". Ühenda Gemini API, et genereerida kasutaja sisendi põhjal naljakaid startup-ideid. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemust ilusas kaardikujunduses: startupi nimi, loosung, liftikõne, väärtus ja investori tsitaat. Lisa nupp "Genereeri uus idee".
+Loo Next.js veebirakendus nimega "Tulevikuratas". Tumeda teemaga. Sellel on üks sisestusväli (muutus) ja nupp "Genereeri tulevikuratas". Ühenda Gemini API, et genereerida kasutaja sisendi põhjal tulevikuratas. Too välja:
+- keskne muutus
+- 4 esimese taseme mõju
+- iga esimese taseme mõju kohta 2 teise taseme mõju
+- iga teise taseme mõju kohta 1 kolmanda taseme mõju
+Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja arusaadavalt eesti keeles. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemust ilusas ratta kujulises kujunduses. Lisa nupp "Genereeri uus ratas".
   </div>
   <p style="font-size: 0.7em; color: var(--green);">See üks prompt annab sulle Tase 1 + 2 korraga! 🚀</p>
 </section>
