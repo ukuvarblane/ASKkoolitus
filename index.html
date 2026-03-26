@@ -650,7 +650,7 @@ Kui kasutaja vajutab "Genereeri tulevikuratas", saada Gemini API-le kasutaja sis
 - iga teise taseme mõju kohta 1 kolmanda taseme mõju
 
 Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja arusaadavalt eesti keeles. Väldi väga pikki lauseid. Tagasta tulemus JSON-vormingus."
-Näita tulemust visuaalse tulevikurattana või selgelt eristatud plokkidena.
+Näita tulemust visuaalse tulevikurattana.
 Lisa nupp "Genereeri uus tulevikuratas".
   </div>
   <p style="font-size: 0.7em; color: var(--accent3);">⚠️ API võti peab olema .env.local failis (lõime selle seadistamise ajal)</p>
@@ -702,7 +702,7 @@ Loo Next.js veebirakendus nimega "Tulevikuratas". Tumeda teemaga. Sellel on üks
 - 4 esimese taseme mõju
 - iga esimese taseme mõju kohta 2 teise taseme mõju
 - iga teise taseme mõju kohta 1 kolmanda taseme mõju
-Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja arusaadavalt eesti keeles. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemust ilusas ratta kujulises kujunduses. Lisa nupp "Genereeri uus ratas".
+Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja arusaadavalt eesti keeles. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemust ilusas ratta kujulises kujunduses.
   </div>
   <p style="font-size: 0.7em; color: var(--green);">See üks prompt annab sulle Tase 1 + 2 korraga! 🚀</p>
 </section>
@@ -724,19 +724,15 @@ Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja 
   <h2>Vali vähemalt üks!</h2>
   <div class="card-grid">
     <div class="card">
-      <h4>🎚️ A: Hullumeelsuse skaala</h4>
-      <p>Liugur: "Peaaegu reaalne" → "Täiesti hull". AI kohandab absurdsust.</p>
+      <h4>🎚️ A: Reaalsuse skaala</h4>
+      <p>Liugur: "Väga reaalne" → "Täiesti hull". AI kohandab absurdsust.</p>
     </div>
     <div class="card">
-      <h4>📊 B: Esitluse generaator</h4>
-      <p>3 slaidi: Probleem, Lahendus, Turu suurus. Professionaalne aga absurdne.</p>
+      <h4>🦈 B: Retsensentide paneel</h4>
+      <p>3 retsensenti reageerivad: skeptik, entusiast, segaduses. Naljakat tagasisidet!</p>
     </div>
     <div class="card">
-      <h4>🦈 C: Investorite paneel</h4>
-      <p>3 investorit reageerivad: skeptik, entusiast, segaduses. Naljakat tagasisidet!</p>
-    </div>
-    <div class="card">
-      <h4>🎨 D: Oma idee!</h4>
+      <h4>🎨 C: Oma idee!</h4>
       <p>Lisa midagi, mida SINA tahad. Animatsioonid? Helid? Teemad? Taevas on piir!</p>
     </div>
   </div>
@@ -746,11 +742,11 @@ Mõjud peavad olema loogilised, selged ja omavahel seotud. Kirjuta lühidalt ja 
 <!-- FEATURE A PROMPT -->
 <!-- ============================================ -->
 <section>
-  <h2>Prompt: Hullumeelsuse skaala</h2>
+  <h2>Prompt: Reaalsuse skaala</h2>
   <div class="prompt-box good-prompt" style="font-size: 0.55em;">
-Lisa "Hullumeelsuse tase" liugur 5 tasemega:<br>
-"Peaaegu reaalne", "Kergelt veider", "Päris metsik", "Absoluutselt hull", "Mis ma just lugesin"<br><br>
-Anna valitud tase AI promptile kaasa, et see kohandaks genereeritud startup-idee hullumeelsust vastavalt. Näita praegust taseme nime liuguri kõrval koos sobiva emojiga. Liugur peaks välja nägema lahe, rohelisest punaseni gradiendiga.
+Lisa "Reaalsuse tase" liugur 5 tasemega:<br>
+"Väga reaalne", "Kergelt veider", "Päris metsik", "Absoluutselt hull", "Mis ma just lugesin"<br><br>
+Anna valitud tase AI promptile kaasa, et see kohandaks genereeritud tulevikuratta reaalsust vastavalt. Näita praegust taseme nime liuguri kõrval koos sobiva emojiga. Liugur peaks välja nägema lahe, rohelisest punaseni gradiendiga.
   </div>
 </section>
 
@@ -760,12 +756,12 @@ Anna valitud tase AI promptile kaasa, et see kohandaks genereeritud startup-idee
 <section>
   <h2>Prompt: Investorite paneel</h2>
   <div class="prompt-box good-prompt" style="font-size: 0.55em;">
-Lisa nupp "Investorite paneel" startup-idee kaardi alla.<br><br>
-Kui nuppu vajutatakse, genereeri 3 investori reaktsioonid praegusele startup-ideele:<br>
-- Üks skeptiline investor ("Ma loobusin, sest...")<br>
-- Üks vaimustunud investor ("Ma annan 10 miljonit 5% eest, sest...")<br>
-- Üks segaduses investor ("Oota, sa tahad öelda, et...")<br><br>
-Näita iga investorit kaardina koos emoji avatari ja tema reaktsioonitsitaadiga. Kujunda see nagu telesaade paneel.
+Lisa nupp "Retsensentide paneel" tulevikuratta alla.<br><br>
+Kui nuppu vajutatakse, genereeri 3 retsensendi reaktsioonid praegusele tulevikurattale:<br>
+- Üks skeptiline retsensent ("See on päris jama, sest...")<br>
+- Üks vaimustunud retsensent ("Ma annan maksimumpunktid, sest...")<br>
+- Üks segaduses retsensent ("Oota, sa tahad öelda, et...")<br><br>
+Näita iga retsensenti kaardina koos emoji avatari ja tema reaktsioonitsitaadiga. Kujunda see nagu telesaade paneel.
   </div>
 </section>
 
