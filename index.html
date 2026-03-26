@@ -857,7 +857,7 @@ Näita iga retsensenti kaardina koos emoji avatari ja tema reaktsioonitsitaadiga
 <section>
   <h2>Viimistlus</h2>
   <div class="prompt-box good-prompt" style="font-size: 0.55em;">
-Muuda kogu rakendus mobiilisõbralikuks. Lisa nupp "Jaga seda ideed", mis kopeerib startup-idee teksti lõikelauale ja näitab kinnitust "Kopeeritud!". Lisa jalus: "Ehitatud vaibi, mitte koodiga | Tartu Ülikool 18.02.2026".
+Muuda kogu rakendus mobiilisõbralikuks. Lisa nupp "Jaga seda tulevikuratast", mis kopeerib tulevikuratta teksti lõikelauale ja näitab kinnitust "Kopeeritud!". Lisa jalus: "Arnguseire Keskus 30.03.2026".
   </div>
   <br>
   <p style="font-size: 0.8em;">Lisa ka oma isiklik puudutus:</p>
@@ -929,7 +929,7 @@ Muuda kogu rakendus mobiilisõbralikuks. Lisa nupp "Jaga seda ideed", mis kopeer
   <div class="two-col" style="margin-top: 20px;">
     <div>
       <p style="color: var(--green); font-weight: 600;">✅ OK avalikuks:</p>
-      <p style="font-size: 0.7em; color: var(--dim);">Meie IdeeTreiler — ei kogu isikuandmeid, ei salvesta midagi, lihtsalt genereerib naljakaid ideid</p>
+      <p style="font-size: 0.7em; color: var(--dim);">Meie Tulevikuratas — ei kogu isikuandmeid, ei salvesta midagi, lihtsalt genereerib (naljakaid) rattaid</p>
     </div>
     <div>
       <p style="color: var(--red); font-weight: 600;">🚫 Küsi enne spetsialisti:</p>
@@ -952,7 +952,7 @@ Muuda kogu rakendus mobiilisõbralikuks. Lisa nupp "Jaga seda ideed", mis kopeer
     </div>
     <div>
       <p style="color: var(--green); font-weight: 600;">✅ Küsi:</p>
-      <p style="font-size: 0.7em; color: var(--dim);">"Lisa võimalus, et kasutajad saavad oma lemmik startup-ideed nimekirja salvestada"</p>
+      <p style="font-size: 0.7em; color: var(--dim);">"Lisa võimalus, et kasutajad saavad oma lemmik tulevikurattad nimekirja salvestada"</p>
     </div>
   </div>
   <br>
@@ -1002,14 +1002,14 @@ Muuda kogu rakendus mobiilisõbralikuks. Lisa nupp "Jaga seda ideed", mis kopeer
 </section>
 
 <section>
-  <h2>Tase 5: Pitch Deck</h2>
+  <h2>Tase 5: Väljund dokument</h2>
   <p style="font-size: 0.8em; color: var(--dim);">AI genereerib Markdowni → Pandoc teeb sellest professionaalse dokumendi</p>
   <div class="prompt-box good-prompt" style="font-size: 0.55em;">
-Loo fail pitch.md minu startup-idee kohta. Kirjuta Markdowni formaadis professionaalne ühe-leheküljelise pitch-dokumendi sisu: startupi nimi, loosung, probleem, lahendus, sihtrühm, ärimudel ja meeskond (mina). Kasuta minu viimast genereeritud ideed. Lisa emojid pealkirjadesse.
+Loo fail ratas.md minu tulevikuratta kohta. Kirjuta Markdowni formaadis professionaalne ühe-leheküljeline dokument sisu: uuritava poliitikamuutuse või trendi nimi, kirjeldus, esimese tasandi mõjud, teise tasandi mõjud, kolmanda tasandi mõjud, kriitika saadud tulemuste kohta. Kasuta minu viimast genereeritud tulevikurtast. Lisa emojid pealkirjadesse.
   </div>
   <p style="font-size: 0.75em; margin-top: 16px;">Seejärel terminalis:</p>
   <div class="step-box">
-    <p><code style="font-size: 0.9em; color: var(--green);">pandoc pitch.md -o pitch.docx</code></p>
+    <p><code style="font-size: 0.9em; color: var(--green);">pandoc ratas.md -o ratas.docx</code></p>
   </div>
   <p style="font-size: 0.65em; color: var(--dim); margin-top: 8px;">Tulemus: professionaalne Word-dokument, mida saad kellelegi saata!</p>
 </section>
@@ -1078,43 +1078,7 @@ Loo fail pitch.md minu startup-idee kohta. Kirjuta Markdowni formaadis professio
       <h4>ChatGPT Codex</h4>
       <p>chatgpt.com/codex<br>Hetkel tasuta!</p>
     </div>
-    <div class="card">
-      <h4>Seminari materjalid</h4>
-      <p>seppo.ai/tartucode/<strong>slaidid.html</strong><br>seppo.ai/tartucode/<strong>handout.html</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!-- LÕPUSLAID -->
-<!-- ============================================ -->
-<section class="center-slide" data-background-color="#fafafa">
-  <p style="font-size:2em;">🚀</p>
-  <h1 style="font-size: 1.4em;"><span class="gradient-text">Te ehitasite täna äpi.<br>Nullist. Kolme tunniga.</span></h1>
-  <br>
-  <p style="font-size: 1em; color: #475569;">Mõelge, mida te saate ehitada<br><strong style="color: var(--accent3); font-size: 1.3em;">kolme nädalaga.</strong></p>
-  <br>
-  <p style="font-size: 0.7em; color: var(--dim);">Aitäh! 🎉</p>
-</section>
-
-<!-- ============================================ -->
-<!-- LISA: JÄRELEJÕUDMISE PROMPTID -->
-<!-- ============================================ -->
-<section>
-  <h2>Lisa: Järelejõudmise promptid</h2>
-  <p style="font-size: 0.7em; color: var(--dim);">Kui jäid maha — kopeeri vastav prompt:</p>
-  <div class="step-box" style="font-size: 0.6em;">
-    <strong style="color: var(--accent);">Tase 1:</strong><br>
-    "Loo Next.js veebirakendus nimega 'IdeeTreiler'. Kolme sisestusväljaga (nimi, eriala, hobid), genereerimise nupuga ja näita juhuslikku naljakat startup-ideed eelkirjutatud nimekirjast. Tume teema."
-  </div>
-  <div class="step-box" style="font-size: 0.6em;">
-    <strong style="color: var(--accent2);">Tase 2:</strong><br>
-    "Mu äpil on vorm ja genereerimise nupp. Lisa Gemini API, et see genereeriks kasutaja sisendi põhjal naljakaid startup-ideid. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemusi ilusas kaardikujunduses."
-  </div>
-  <div class="step-box" style="font-size: 0.6em;">
-    <strong style="color: var(--accent3);">Tase 3:</strong><br>
-    "Lisa hullumeelsuse taseme liugur (5 taset: 'Peaaegu reaalne' kuni 'Mis ma just lugesin'), mis muudab seda, kui hullud genereeritud startup-ideed on."
-  </div>
+      </div>
 </section>
 
 <!-- ============================================ -->
