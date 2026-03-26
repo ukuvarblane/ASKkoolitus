@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding Seminar - ASK 30.03.2026</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/github.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --r-background-color: #fafafa;
+    --r-main-font: 'Inter', sans-serif;
+    --r-heading-font: 'Inter', sans-serif;
+    --r-code-font: 'JetBrains Mono', monospace;
+    --r-main-color: #27272a;
+    --r-heading-color: #18181b;
+    --accent: #4f46e5;
+    --accent2: #4f46e5;
+    --accent3: #18181b;
+    --green: #16a34a;
+    --red: #ef4444;
+    --surface: #f4f4f5;
+    --surface2: #e4e4e7;
+    --dim: #71717a;
+  }
+
+  .reveal { font-size: 32px; }
+  .reveal h1 { font-size: 2.2em; font-weight: 800; line-height: 1.1; color: #18181b; letter-spacing: -0.03em; }
+  .reveal h2 { font-size: 1.5em; font-weight: 700; color: #18181b; letter-spacing: -0.02em; }
+  .reveal h3 { font-size: 1.05em; font-weight: 600; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.75em; }
+
+  .reveal .slides section { text-align: left; padding: 40px 72px; }
+  .reveal .slides section.center-slide { text-align: center; }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .big-emoji { font-size: 3em; display: block; margin: 0.3em 0; }
+  .medium-emoji { font-size: 1.5em; }
+
+  .pill {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 6px;
+    font-size: 0.65em;
+    font-weight: 500;
+    margin: 2px;
+  }
+  .pill-purple { background: #ede9fe; color: #5b21b6; }
+  .pill-cyan { background: #e0f2fe; color: #0369a1; }
+  .pill-amber { background: #fef3c7; color: #92400e; }
+  .pill-green { background: #dcfce7; color: #15803d; }
+  .pill-red { background: #fee2e2; color: #b91c1c; }
+
+  .prompt-box {
+    background: #fafafa;
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 6px 6px 0;
+    font-family: var(--r-code-font);
+    font-size: 0.62em;
+    line-height: 1.6;
+    margin: 16px 0;
+    color: #3f3f46;
+  }
+
+  .bad-prompt {
+    border-left-color: var(--red);
+    color: #7f1d1d;
+    background: #fef2f2;
+  }
+  .good-prompt {
+    border-left-color: var(--green);
+    color: #14532d;
+    background: #f0fdf4;
+  }
+
+  .step-box {
+    background: transparent;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid var(--surface2);
+  }
+  .step-number {
+    display: inline-block;
+    width: 28px; height: 28px;
+    background: #18181b;
+    color: #fff;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 600;
+    margin-right: 12px;
+    font-size: 0.7em;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--surface2);
+  }
+  .card h4 {
+    margin: 0 0 6px 0;
+    color: #18181b;
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+  .card p {
+    margin: 0;
+    font-size: 0.65em;
+    color: var(--dim);
+    line-height: 1.5;
+  }
+
+  .startup-card {
+    background: #fff;
+    border: 1px solid var(--surface2);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .startup-card .name { font-size: 1.3em; font-weight: 800; color: #18181b; letter-spacing: -0.02em; }
+  .startup-card .slogan { font-style: italic; color: var(--dim); margin: 6px 0 14px; font-size: 0.75em; }
+  .startup-card .pitch { font-size: 0.68em; color: var(--dim); line-height: 1.6; }
+  .startup-card .valuation {
+    font-size: 1.5em; font-weight: 800;
+    color: var(--accent);
+    margin: 14px 0 6px;
+  }
+  .startup-card .investor { font-size: 0.6em; color: #a1a1aa; font-style: italic; }
+
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+    border-left: 2px solid var(--surface2);
+  }
+  .timeline-item {
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.72em;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 7px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fafafa;
+  }
+  .timeline-item .time {
+    color: var(--accent);
+    font-weight: 600;
+    font-family: var(--r-code-font);
+    font-size: 0.9em;
+  }
+
+  .quote-box {
+    border-left: 3px solid var(--surface2);
+    padding: 16px 24px;
+    background: transparent;
+    border-radius: 0;
+    font-style: italic;
+    font-size: 0.88em;
+    margin: 16px 0;
+    color: #3f3f46;
+  }
+  .quote-box .author {
+    font-style: normal;
+    color: var(--dim);
+    font-size: 0.75em;
+    margin-top: 8px;
+  }
+
+  .reveal ul { list-style: none; padding: 0; }
+  .reveal ul li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 0.85em;
+  }
+  .reveal ul li::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 15px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .screenshot-placeholder {
+    background: #fff;
+    border: 1px solid var(--surface2);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.7em;
+    margin: 12px 0;
+  }
+
+  .mantra {
+    text-align: center;
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #18181b;
+    margin: 20px 0;
+    padding: 24px;
+    border: none;
+    border-radius: 10px;
+    background: #f4f4f5;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .reveal .progress { color: var(--accent); height: 3px; }
+  .reveal .controls button { color: var(--accent); }
+
+  .section-divider {
+    text-align: center !important;
+  }
+  .section-divider h2 {
+    font-size: 2em !important;
+  }
+
+  kbd {
+    background: #fff;
+    border: 1px solid var(--surface2);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: var(--r-code-font);
+    font-size: 0.85em;
+    color: #18181b;
+  }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================ -->
+<!-- TIITELSLAID -->
+<!-- ============================================ -->
+<section class="center-slide" data-background-image="tartuseminar.png" data-background-size="contain" data-background-color="#fafafa">
+</section>
+
+<section class="center-slide" data-background-color="#fafafa">
+  <p style="font-size:3em; margin:0;">🚀</p>
+  <h1><span class="gradient-text">Vibe Coding</span></h1>
+  <p style="font-size:1.1em; color: var(--dim); margin-top: -8px;">Ehita tarkvara ilma programmeerimata</p>
+  <br>
+  <p style="font-size:0.7em; color: #94a3b8;">Tartu Ülikool | 18.02.2026 | 16:00–19:00</p>
+  <p style="font-size:0.6em; color: #a1a1aa; margin-top: 20px;">seppo.ai/tartucode/<strong>slaidid.html</strong> · seppo.ai/tartucode/<strong>handout.html</strong></p>
+</section>
+
+<!-- ============================================ -->
+<!-- MIS ON VIBE CODING -->
+<!-- ============================================ -->
+<section>
+  <h2>Mis on vibe coding?</h2>
+  <div class="quote-box">
+    "Kõige kuumem uus programmeerimiskeel on eesti keel."
+    <div class="author">— vabalt Andrej Karpathy järgi (OpenAI / Tesla)</div>
+  </div>
+  <ul>
+    <li>Sa kirjeldad, MIDA sa tahad</li>
+    <li>AI kirjutab koodi sinu eest</li>
+    <li>Sa suunad, AI ehitab</li>
+  </ul>
+  <p style="color: var(--accent2); font-size: 0.8em;">Sa oled režissöör, AI on terve filmimeeskond</p>
+</section>
+
+<!-- ============================================ -->
+<!-- KES KASUTAB VIBE CODING'UT -->
+<!-- ============================================ -->
+<section>
+  <h2>Kes juba kasutab?</h2>
+  <div class="quote-box">
+    "Üle 30% Google'i uuest koodist on nüüd AI-ga genereeritud."
+    <div class="author">— Sundar Pichai, Google CEO (aprill 2025)</div>
+  </div>
+  <div class="quote-box">
+    "Meie parimad arendajad pole alates detsembrist ühtegi koodirida kirjutanud."
+    <div class="author">— Gustav Söderström, Spotify kaas-CEO (veebruar 2026)</div>
+  </div>
+  <p style="font-size: 0.85em; color: var(--accent3); margin-top: 16px;">See pole tulevik. See on olevik. Ja täna õpite seda ka teie.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- LIVE DEMO -->
+<!-- ============================================ -->
+<section class="center-slide">
+  <p style="font-size:2em; margin-bottom: 0;">👀</p>
+  <h2 style="color: var(--accent3);">Otse-demo</h2>
+  <p>Teeme silmade ees valmis ühe äpi...</p>
+</section>
+
+<!-- ============================================ -->
+<!-- MIDA ME EHITAME -->
+<!-- ============================================ -->
+<section>
+  <h2>Mida me täna ehitame?</h2>
+  <div class="startup-card">
+    <div class="name">🚀 IdeeTreiler</div>
+    <div class="slogan">"Sinu järgmine miljardi-dollari idee on ühe kliki kaugusel"</div>
+    <div class="pitch">AI-põhine startup-ideede generaator. Sisesta oma eriala ja hobid — saa absurdseid aga veenvaid äriideid, esitatud tõsises startup-formaadis.</div>
+    <div class="valuation">$2.3 miljardit 🦄</div>
+    <div class="investor">"Ma olen sees. Võtke mu raha." — AI investor</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- NÄIDE -->
+<!-- ============================================ -->
+<section>
+  <h2>Näide: mida äpp genereerib</h2>
+  <div class="startup-card">
+    <div class="name">📚 RaamatuBnB</div>
+    <div class="slogan">"Rendi oma raamatukogukohta välja"</div>
+    <div class="pitch">Airbnb kohtus Tartu Ülikooli raamatukoguga. Broneeri oma lemmikkoht 2. korruse akna ääres, koos lisateenustega nagu kohvitoomine ja müra-blokeeriv jõuväli.</div>
+    <div class="valuation">$4.7 miljardit 🦄</div>
+    <div class="investor">"Geniaalne. Kuhu ma allkirjastan?" — riskikapitalist</div>
+  </div>
+  <p style="text-align: center; font-size: 0.7em; color: var(--dim); margin-top: 8px;">Iga tudengi äpp genereerib UNIKAALSEID ideid tema enda tausta põhjal</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TÄNANE PLAAN -->
+<!-- ============================================ -->
+<section>
+  <h2>Tänane plaan</h2>
+  <div class="timeline">
+    <div class="timeline-item"><span class="time">16:00</span> Sissejuhatus <span class="pill pill-cyan">15 min</span></div>
+    <div class="timeline-item"><span class="time">16:15</span> Seadistamine <span class="pill pill-cyan">30 min</span></div>
+    <div class="timeline-item"><span class="time">16:45</span> Koos ehitame: kasutajaliides + AI <span class="pill pill-purple">35 min</span></div>
+    <div class="timeline-item"><span class="time">17:20</span> Paus ☕ <span class="pill pill-amber">15 min</span></div>
+    <div class="timeline-item"><span class="time">17:35</span> Lisafeatured + iseseisev töö <span class="pill pill-purple">35 min</span></div>
+    <div class="timeline-item"><span class="time">18:10</span> Viimistlus + jagamine <span class="pill pill-green">25 min</span></div>
+    <div class="timeline-item"><span class="time">18:35</span> Pitch Deck (Pandoc) <span class="pill pill-cyan">10 min</span></div>
+    <div class="timeline-item"><span class="time">18:45</span> Lõpuring <span class="pill pill-show">15 min</span></div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SEADISTAMINE -->
+<!-- ============================================ -->
+<section class="center-slide section-divider" data-background-color="#f4f4f5">
+  <p style="font-size:2.5em;">⚙️</p>
+  <h2>Seadistamine</h2>
+  <p style="color: var(--dim);">Paneme tööriistad tööle</p>
+</section>
+
+<!-- ============================================ -->
+<!-- SAMM 1: ANTIGRAVITY -->
+<!-- ============================================ -->
+<section>
+  <h2>Samm 1: Paigalda tarkvara</h2>
+  <p style="font-size: 0.75em; color: var(--dim);">Need tööriistad on vaja — lae alla ja paigalda:</p>
+  <div class="card-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+    <div class="card">
+      <h4>Node.js</h4>
+      <p><strong>nodejs.org</strong><br>→ Download → paigalda<br>Kontrolli: <kbd>node --version</kbd></p>
+    </div>
+    <div class="card">
+      <h4>Antigravity</h4>
+      <p><strong>antigravity.google/download</strong><br>→ Lae alla → paigalda</p>
+    </div>
+    <div class="card">
+      <h4>Pandoc</h4>
+      <p><strong>pandoc.org/installing</strong><br>→ Lae alla → paigalda<br>Kontrolli: <kbd>pandoc --version</kbd></p>
+    </div>
+    <div class="card">
+      <h4>ChatGPT Codex</h4>
+      <p><strong>chatgpt.com/codex</strong><br>→ Logi sisse OpenAI kontoga</p>
+    </div>
+  </div>
+  <p style="font-size: 0.7em; color: var(--dim); margin-top: 12px;">Ava <strong>terminal</strong> (Mac: Terminal, Win: PowerShell) ja kontrolli, et node ja pandoc töötavad!</p>
+</section>
+
+<section>
+  <h2>Samm 2: Seadista Antigravity</h2>
+  <div class="step-box">
+    <p><span class="step-number">1</span> Käivita Antigravity ja logi sisse oma <strong>Google kontoga</strong></p>
+  </div>
+  <div class="step-box">
+    <p><span class="step-number">2</span> Loo arvutisse <strong>uus tühi kaust</strong> (nt "IdeeTreiler") ja ava see Antigravitys</p>
+  </div>
+  <div class="step-box">
+    <p><span class="step-number">3</span> Vali režiimiks <strong>"Fast"</strong> ja kirjuta <strong>"Ask anything"</strong> väljale oma esimene prompt!</p>
+  </div>
+  <p style="font-size: 0.65em; color: var(--dim); margin-top: 16px;">Ei tööta? Kasuta chatgpt.com/codex — sama põhimõte!</p>
+</section>
+
+<!-- ============================================ -->
+<!-- AGENTS.MD -->
+<!-- ============================================ -->
+<section>
+  <h2>Samm 3: AGENTS.md — memo AI-le</h2>
+  <p style="font-size: 0.8em; color: var(--dim);">Enne ehitamist anna AI-le kontekst sinu projekti kohta:</p>
+  <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+Loo AGENTS.md fail selle projekti jaoks. Projekti nimi on IdeeTreiler — AI startup-ideede generaator. Kasuta Next.js-i. Kujundus olgu tume teema. Kommentaarid ja muutujate nimed inglise keeles.
+  </div>
+  <div class="two-col" style="margin-top: 16px;">
+    <div>
+      <h3>Mis see on?</h3>
+      <p style="font-size: 0.7em;">AGENTS.md on <strong>püsiv memo</strong> AI agendile. Ta loeb seda ALATI enne tööle hakkamist.</p>
+      <p style="font-size: 0.7em; color: var(--dim); margin-top: 8px;">Nii ei pea sa iga kord uuesti seletama, mis projekt see on.</p>
+    </div>
+    <div>
+      <h3>Lisa oma reegleid!</h3>
+      <p style="font-size: 0.7em; color: var(--accent2);">"Lisa: kasuta lilla aktsendivärvi"</p>
+      <p style="font-size: 0.7em; color: var(--accent3);">"Lisa: nurkade raadius olgu 16px"</p>
+      <p style="font-size: 0.7em; color: var(--accent);">"Lisa: kõik tekstid eesti keeles"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- ANTIGRAVITY LIIDES -->
+<!-- ============================================ -->
+<section>
+  <h2>Antigravity liides</h2>
+  <p style="font-size: 0.75em; color: var(--dim);">See EI ole tavaline koodiredaktor. See on "juhtimiskeskus" AI agentide jaoks.</p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Agent Manager</h4>
+      <p>Peamine vaade. Siit sa suhtled AI-ga. Kirjuta "Ask anything" väljale, mida sa tahad.</p>
+    </div>
+    <div class="card">
+      <h4>Redaktorivaade</h4>
+      <p>Lülita failide vaatamiseks: <kbd>Cmd+E</kbd> (Mac) / <kbd>Ctrl+E</kbd> (Win). Ei pea kasutama!</p>
+    </div>
+    <div class="card">
+      <h4>Brauser</h4>
+      <p>Sisseehitatud brauser — näed oma äppi otse Antigravitys. Ei pea eraldi avama.</p>
+    </div>
+    <div class="card">
+      <h4>Tagasiside</h4>
+      <p>Kui agent teeb midagi, saad anda tagasisidet nagu Google Docsis — kommentaaridega.</p>
+    </div>
+  </div>
+  <p style="font-size: 0.7em; text-align: center; color: var(--accent2); margin-top: 12px;">Vali režiimiks <strong>"Fast"</strong> — see on meile kiirem ja lihtsam!</p>
+</section>
+
+<!-- ============================================ -->
+<!-- SAMM 2: GEMINI API VÕTI -->
+<!-- ============================================ -->
+<section>
+  <h2>Samm 4: Gemini API võti</h2>
+  <p style="font-size: 0.75em; color: var(--dim);">Seda läheb vaja, et meie äpp saaks AI-ga suhelda</p>
+  <div class="step-box">
+    <p><span class="step-number">1</span> Mine aadressile <strong style="color: var(--accent2);">aistudio.google.com</strong></p>
+  </div>
+  <div class="step-box">
+    <p><span class="step-number">2</span> Logi sisse <strong>sama Google kontoga</strong></p>
+  </div>
+  <div class="step-box">
+    <p><span class="step-number">3</span> Vajuta <strong>"Get API Key"</strong> → <strong>"Create API Key"</strong> → kopeeri võti</p>
+  </div>
+  <div class="step-box">
+    <p><span class="step-number">4</span> Loo projekti kausta fail <strong>.env.local</strong> ja kirjuta sinna:<br>
+    <code style="background: var(--surface); padding: 4px 12px; border-radius: 4px; font-size: 0.85em;">GEMINI_API_KEY=sinu_tegelik_võti_siia</code></p>
+  </div>
+  <p style="font-size: 0.65em; color: var(--dim); margin-top: 12px;">See on nagu seif — sinu võti on seal turvaline ja koodi sisse ei lähe</p>
+</section>
+
+<!-- ============================================ -->
+<!-- MIS ON API VÕTI -->
+<!-- ============================================ -->
+<section>
+  <h2>Mis on API võti?</h2>
+  <div class="two-col">
+    <div>
+      <p class="medium-emoji">🔑</p>
+      <p style="font-size: 0.8em;">API võti on nagu <strong>parool</strong>, mis lubab sinu äpil Gemini AI-ga rääkida.</p>
+      <br>
+      <p style="font-size: 0.8em;">See näeb välja umbes nii:</p>
+      <div class="prompt-box" style="font-size: 0.85em; word-break: break-all;">AIzaSyB3x...kL9mQ2</div>
+    </div>
+    <div>
+      <h3>Oluline</h3>
+      <ul>
+        <li>Ära jaga oma võtit teistega</li>
+        <li>See on TASUTA (piiratud kasutusega)</li>
+        <li>~20-50 päringut päevas</li>
+        <li>Meile piisab sellest küll!</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- KUI EI TÖÖTA -->
+<!-- ============================================ -->
+<section>
+  <h2>Kui miski ei tööta...</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Antigravity ei käivitu?</h4>
+      <p>Proovi brauseris avada. Või kasuta <strong>chatgpt.com/codex</strong> — sama põhimõte!</p>
+    </div>
+    <div class="card">
+      <h4>API võti ei teki?</h4>
+      <p>Küsi naabrilt abi! Või tõsta käsi — Indrek tuleb appi.</p>
+    </div>
+    <div class="card">
+      <h4>WiFi on aeglane?</h4>
+      <p>Kasuta telefoni hotspoti. Või oota hetk — serveri koormus läheb mööda.</p>
+    </div>
+    <div class="card">
+      <h4>Üldse kõik on katki?</h4>
+      <p>Ära stressa! Istu naabri kõrvale ja ehitage koos. Või jälgi ekraanil demo'd.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 1 -->
+<!-- ============================================ -->
+<section class="center-slide section-divider" data-background-color="#f4f4f5">
+  <p style="font-size:2.5em;">🎨</p>
+  <h2>Tase 1</h2>
+  <p style="color: var(--dim);">Ehitame kasutajaliidese</p>
+  <p style="font-size: 0.6em; color: #94a3b8;">~15 minutit</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 1 PROMPT -->
+<!-- ============================================ -->
+<section>
+  <h2>Tase 1: Sinu esimene prompt</h2>
+  <p style="font-size: 0.7em; color: var(--dim);">Next.js = raamistik veebiäppide ehitamiseks. Kopeeri see "Ask anything" väljale:</p>
+  <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+Loo Next.js veebirakendus nimega "IdeeTreiler". Kujundus olgu ilus ja kaasaegne startup-teemaline.<br><br>
+Seal peab olema:<br>
+- Suur pealkiri "IdeeTreiler" koos alamtekstiga "Sinu järgmine miljardi-dollari idee on ühe kliki kaugusel"<br>
+- Sisestusväljad: sinu nimi, ülikooli eriala, hobid (komaga eraldatud)<br>
+- Suur nupp "Genereeri mu startup" koos raketimärgiga 🚀<br>
+- Kui nuppu vajutatakse, näita tulemuskaarti: startupi nimi, loosungitekst, liftikõne (2-3 lauset), hinnanguline väärtus ja investori reaktsioonitsitaat<br>
+- Kasuta professionaalset tumedat teemat aktsendivärvidega<br>
+- Praegu kasuta 10 eelkirjutatud naljaka startup-idee nimekirja, mis ilmuvad juhuslikult<br>
+- Lisa lõbus laadimisanimatsioon, mis ütleb "Häirin tööstusharusid..." enne tulemuse näitamist
+  </div>
+  <p style="font-size: 0.65em; color: var(--accent3);">⚡ Muuda äpi nimi, kujundus ja stiil omaks — tee ENDA oma!</p>
+</section>
+
+<!-- ============================================ -->
+<!-- MIDA PEAKSID NÄGEMA -->
+<!-- ============================================ -->
+<section class="center-slide">
+  <h2>Mida sa peaksid nägema</h2>
+  <div class="screenshot-placeholder">
+    [Siin näitab Indrek oma ekraanil, mis tuli]<br><br>
+    🚀 IdeeTreiler<br>
+    "Sinu järgmine miljardi-dollari idee on ühe kliki kaugusel"<br><br>
+    [ Nimi ] [ Eriala ] [ Hobid ]<br>
+    [ 🚀 Genereeri mu startup ]<br><br>
+    📋 Startup-idee kaart ilmub siia
+  </div>
+  <p style="font-size: 0.8em; color: var(--green);">✅ Kui sa näed seda — oled järjel!</p>
+</section>
+
+<!-- ============================================ -->
+<!-- ÕPPETUND 1 -->
+<!-- ============================================ -->
+<section>
+  <h2>Õppetund #1</h2>
+  <h3>Hea prompt vs halb prompt</h3>
+  <div style="margin: 16px 0;">
+    <p style="color: var(--red); font-weight: 600; font-size: 0.8em;">❌ HALB:</p>
+    <div class="prompt-box bad-prompt">"Tee mulle äpp"</div>
+  </div>
+  <div>
+    <p style="color: var(--green); font-weight: 600; font-size: 0.8em;">✅ HEA:</p>
+    <div class="prompt-box good-prompt" style="font-size: 0.6em;">
+"Loo veebirakendus tumeda teemaga, sisestusväljadega nime ja hobide jaoks, genereerimise nupuga, ja näita tulemusi kujundatud kaardil startupi nime, loosungi ja väärtusega"
+    </div>
+  </div>
+  <div class="mantra" style="font-size: 1em;">
+    Mida täpsemalt sa kirjeldad,<br>seda paremat tulemust sa saad
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 2 -->
+<!-- ============================================ -->
+<section class="center-slide section-divider" data-background-color="#f4f4f5">
+  <p style="font-size:2.5em;">🤖</p>
+  <h2>Tase 2</h2>
+  <p style="color: var(--dim);">Ühendame AI</p>
+  <p style="font-size: 0.6em; color: #94a3b8;">~20 minutit</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 2 PROMPT -->
+<!-- ============================================ -->
+<section>
+  <h2>Tase 2: Lisa AI</h2>
+  <div class="prompt-box good-prompt" style="font-size: 0.52em;">
+Asenda eelkirjutatud startup-ideed AI-genereeritud ideedega, kasutades Gemini API-t.<br>
+Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Ära kirjuta võtit otse koodi sisse.<br><br>
+Kui kasutaja vajutab "Genereeri", saada tema nimi, eriala ja hobid Gemini API-le koos selle juhisega:<br><br>
+"Sa oled satiirilise startup-ideede generaator. Loo ÜKS naljakas aga üllatavalt usutav startup-idee, mis põhineb kasutaja taustal. Lisa: loominguline startupi nimi, tabav loosungitekst, 2-3-lauseline liftikõne ülepaisutatud Silicon Valley stiilis, absurdselt kõrge väärtuse hinnang ja üherealine investori reaktsioon. Ole naljakas. Tagasta JSON-vormingus väljadega: nimi, loosung, kone, vaartus, investoritsitaat."<br><br>
+Lisa nupp "Genereeri uus idee".
+  </div>
+  <p style="font-size: 0.7em; color: var(--accent3);">⚠️ API võti peab olema .env.local failis (lõime selle seadistamise ajal)</p>
+</section>
+
+<!-- ============================================ -->
+<!-- ÕPPETUND 2 -->
+<!-- ============================================ -->
+<section>
+  <h2>Õppetund #2</h2>
+  <h3>Iteratsioon on normaalne</h3>
+  <p style="font-size: 0.8em;">Esimene tulemus pole KUNAGI täiuslik. Ja see on OK!</p>
+  <div style="margin: 16px 0;">
+    <p style="font-size: 0.75em;">Tüüpilised probleemid ja kuidas öelda:</p>
+    <div class="step-box" style="font-size: 0.7em;">
+      <strong style="color: var(--red);">Probleem:</strong> AI vastus ei kuvata õigesti<br>
+      <strong style="color: var(--green);">Ütle:</strong> "AI vastus ei kuvata korralikult. Palun parsi JSON ja näita iga välja eraldi kujundatud sektsioonis."
+    </div>
+    <div class="step-box" style="font-size: 0.7em;">
+      <strong style="color: var(--red);">Probleem:</strong> Kujundus on kole<br>
+      <strong style="color: var(--green);">Ütle:</strong> "Tulemuskaart näeb inetu välja. Tee see nagu esmaklassiline startup pitch-kaart: ümarad nurgad, gradientpiir ja parem vahedus."
+    </div>
+  </div>
+  <div class="mantra" style="font-size: 1em;">
+    Sa ei pea teadma, KUIDAS parandada.<br>Ainult MIS on valesti.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- PAUS 1 -->
+<!-- ============================================ -->
+<section class="center-slide" data-background-color="#f4f4f5">
+  <p style="font-size:4em;">☕</p>
+  <h1 style="font-size: 2em;">Paus</h1>
+  <p style="color: var(--dim);">15 minutit</p>
+  <br>
+  <p style="font-size: 0.7em; color: #94a3b8;">Proovi oma äppi! Genereeri paar ideed.<br>Kui jäid maha — küsi naabrilt abi või kasuta ekraanil olevat päästeprompt'i.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- JÄRELEJÕUDMISE SLAID -->
+<!-- ============================================ -->
+<section>
+  <h2>Maha jäänud? Ära muretse!</h2>
+  <p style="font-size: 0.8em; color: var(--dim);">Kopeeri see prompt — see paneb su aluse paika:</p>
+  <div class="prompt-box good-prompt" style="font-size: 0.5em;">
+Loo Next.js veebirakendus nimega "IdeeTreiler". Tumeda teemaga. Sellel on kolm sisestusvälja (nimi, eriala, hobid) ja nupp "Genereeri". Ühenda Gemini API, et genereerida kasutaja sisendi põhjal naljakaid startup-ideid. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemust ilusas kaardikujunduses: startupi nimi, loosung, liftikõne, väärtus ja investori tsitaat. Lisa nupp "Genereeri uus idee".
+  </div>
+  <p style="font-size: 0.7em; color: var(--green);">See üks prompt annab sulle Tase 1 + 2 korraga! 🚀</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 3 -->
+<!-- ============================================ -->
+<section class="center-slide section-divider" data-background-color="#f4f4f5">
+  <p style="font-size:2.5em;">✨</p>
+  <h2>Tase 3</h2>
+  <p style="color: var(--dim);">Lisa oma lemmikfeature</p>
+  <p style="font-size: 0.6em; color: #94a3b8;">~35 minutit</p>
+</section>
+
+<!-- ============================================ -->
+<!-- FEATURE VALIK -->
+<!-- ============================================ -->
+<section>
+  <h2>Vali vähemalt üks!</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4>🎚️ A: Hullumeelsuse skaala</h4>
+      <p>Liugur: "Peaaegu reaalne" → "Täiesti hull". AI kohandab absurdsust.</p>
+    </div>
+    <div class="card">
+      <h4>📊 B: Esitluse generaator</h4>
+      <p>3 slaidi: Probleem, Lahendus, Turu suurus. Professionaalne aga absurdne.</p>
+    </div>
+    <div class="card">
+      <h4>🦈 C: Investorite paneel</h4>
+      <p>3 investorit reageerivad: skeptik, entusiast, segaduses. Naljakat tagasisidet!</p>
+    </div>
+    <div class="card">
+      <h4>🎨 D: Oma idee!</h4>
+      <p>Lisa midagi, mida SINA tahad. Animatsioonid? Helid? Teemad? Taevas on piir!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FEATURE A PROMPT -->
+<!-- ============================================ -->
+<section>
+  <h2>Prompt: Hullumeelsuse skaala</h2>
+  <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+Lisa "Hullumeelsuse tase" liugur 5 tasemega:<br>
+"Peaaegu reaalne", "Kergelt veider", "Päris metsik", "Absoluutselt hull", "Mis ma just lugesin"<br><br>
+Anna valitud tase AI promptile kaasa, et see kohandaks genereeritud startup-idee hullumeelsust vastavalt. Näita praegust taseme nime liuguri kõrval koos sobiva emojiga. Liugur peaks välja nägema lahe, rohelisest punaseni gradiendiga.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FEATURE C PROMPT -->
+<!-- ============================================ -->
+<section>
+  <h2>Prompt: Investorite paneel</h2>
+  <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+Lisa nupp "Investorite paneel" startup-idee kaardi alla.<br><br>
+Kui nuppu vajutatakse, genereeri 3 investori reaktsioonid praegusele startup-ideele:<br>
+- Üks skeptiline investor ("Ma loobusin, sest...")<br>
+- Üks vaimustunud investor ("Ma annan 10 miljonit 5% eest, sest...")<br>
+- Üks segaduses investor ("Oota, sa tahad öelda, et...")<br><br>
+Näita iga investorit kaardina koos emoji avatari ja tema reaktsioonitsitaadiga. Kujunda see nagu telesaade paneel.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- ÕPPETUND 3 -->
+<!-- ============================================ -->
+<section>
+  <h2>Õppetund #3</h2>
+  <h3>Üks prompt = üks asi</h3>
+  <div class="two-col">
+    <div>
+      <p style="color: var(--red); font-weight: 600; font-size: 0.8em;">❌ Liiga palju korraga:</p>
+      <div class="prompt-box bad-prompt" style="font-size: 0.55em;">
+"Lisa liugur, esitlus, tume režiim, animatsioonid, jagamisnupp ja investorite reaktsioonid kõik korraga"
+      </div>
+    </div>
+    <div>
+      <p style="color: var(--green); font-weight: 600; font-size: 0.8em;">✅ Samm-sammult:</p>
+      <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+"Lisa hullumeelsuse liugur"
+      </div>
+      <p style="font-size: 0.5em; text-align: center; color: var(--dim);">→ testi → toimib? →</p>
+      <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+"Lisa nüüd jagamisnupp"
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- ÕPPETUND 4 -->
+<!-- ============================================ -->
+<section>
+  <h2>Õppetund #4</h2>
+  <h3>Kui midagi läheb katki</h3>
+  <div class="step-box" style="font-size: 0.75em;">
+    <span class="step-number">1</span> <strong>Ära paanitse.</strong> See juhtub KÕIGIGA.
+  </div>
+  <div class="step-box" style="font-size: 0.75em;">
+    <span class="step-number">2</span> <strong>Kirjelda probleemi:</strong> "Nupp ei tööta" / "Näen veateadet"
+  </div>
+  <div class="step-box" style="font-size: 0.75em;">
+    <span class="step-number">3</span> <strong>Kopeeri veateade:</strong> "Mul tuleb selline viga: [kopeeri siia]"
+  </div>
+  <div class="step-box" style="font-size: 0.75em;">
+    <span class="step-number">4</span> <strong>Ütle, mida sa TAHTSID:</strong> "Ma tahtsin X-i, aga sain Y. Palun paranda."
+  </div>
+  <p style="font-size: 0.75em; text-align: center; color: var(--accent2); margin-top: 16px;">Sa oled diagnostik, mitte mehaanik! 🔍</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TEISED TÖÖRIISTAD -->
+<!-- ============================================ -->
+<section>
+  <h2>Teised tööriistad</h2>
+  <p style="font-size: 0.8em; color: var(--dim);">Antigravity pole ainus! Sama põhimõte töötab igal pool:</p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>ChatGPT Codex</h4>
+      <p>OpenAI agent. chatgpt.com/codex — hetkel tasuta!</p>
+    </div>
+    <div class="card">
+      <h4>Claude Code</h4>
+      <p>Anthropic'u terminali-agent. Väga võimekas koodija.</p>
+    </div>
+    <div class="card">
+      <h4>Cursor</h4>
+      <p>VS Code'i haru AI-ga. Populaarne profide seas.</p>
+    </div>
+    <div class="card">
+      <h4>Replit</h4>
+      <p>Brauseripõhine. Pole vaja midagi paigaldada.</p>
+    </div>
+  </div>
+  <div class="mantra" style="font-size: 0.85em;">
+    Tööriistu on palju. Põhimõte on sama:<br>kirjelda → genereeri → paranda → korda
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 4 -->
+<!-- ============================================ -->
+<section class="center-slide section-divider" data-background-color="#f4f4f5">
+  <p style="font-size:2.5em;">🌍</p>
+  <h2>Tase 4</h2>
+  <p style="color: var(--dim);">Viimistlus + jagamine</p>
+  <p style="font-size: 0.6em; color: #94a3b8;">~25 minutit</p>
+</section>
+
+<!-- ============================================ -->
+<!-- VIIMISTLUS -->
+<!-- ============================================ -->
+<section>
+  <h2>Viimistlus</h2>
+  <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+Muuda kogu rakendus mobiilisõbralikuks. Lisa nupp "Jaga seda ideed", mis kopeerib startup-idee teksti lõikelauale ja näitab kinnitust "Kopeeritud!". Lisa jalus: "Ehitatud vaibi, mitte koodiga | Tartu Ülikool 18.02.2026".
+  </div>
+  <br>
+  <p style="font-size: 0.8em;">Lisa ka oma isiklik puudutus:</p>
+  <ul style="font-size: 0.75em;">
+    <li>Muuda värvid oma maitse järgi</li>
+    <li>Lisa oma nimi/bränd</li>
+    <li>Muuda tekste, emojisid</li>
+    <li>Tee see SINU omaks!</li>
+  </ul>
+</section>
+
+<!-- ============================================ -->
+<!-- AVALDAMINE -->
+<!-- ============================================ -->
+<section>
+  <h2>Kuidas äppi internetti panna?</h2>
+  <p style="font-size: 0.8em; color: var(--dim);">Pärast seminari saad oma äpi avalikuks teha:</p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Vercel</h4>
+      <p>Next.js-i loojate platvorm. Tasuta isiklikuks kasutuseks. Loo konto → <kbd>npx vercel</kbd> → valmis!</p>
+    </div>
+    <div class="card">
+      <h4>Netlify</h4>
+      <p>Teine populaarne valik. Samuti tasuta. Toetab Next.js-i.</p>
+    </div>
+  </div>
+  <p style="font-size: 0.75em; text-align: center; color: var(--accent3); margin-top: 16px;">Sinu äpp saab päris aadressi, nt: <span style="font-family: var(--r-code-font); color: var(--green);">ideetreiler-mari.vercel.app</span></p>
+  <br>
+  <div class="mantra" style="font-size: 1em;">
+    See on SINU äpp.<br>Sa ehitasid selle. Nullist. Kahe tunniga.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- GIT INTRO -->
+<!-- ============================================ -->
+<section>
+  <h2>Mis on Git?</h2>
+  <p style="font-size: 0.85em; color: var(--dim);">Ajamasin sinu koodi jaoks</p>
+  <div class="quote-box" style="font-size: 0.85em;">
+    Iga <strong>commit</strong> on nagu mängu <strong>save point</strong> — saad alati tagasi minna.
+  </div>
+  <div class="card-grid" style="margin-top: 16px;">
+    <div class="card">
+      <h4><code>git add .</code></h4>
+      <p>Vali failid salvestamiseks</p>
+    </div>
+    <div class="card">
+      <h4><code>git commit -m "..."</code></h4>
+      <p>Salvesta hetk (save point)</p>
+    </div>
+    <div class="card">
+      <h4><code>git push</code></h4>
+      <p>Lükka koodi pilve (nt GitHub)</p>
+    </div>
+  </div>
+  <p style="font-size: 0.65em; color: var(--dim); margin-top: 12px;">Antigravity kasutab Git'i taustal automaatselt. Vercel loeb sinu koodi Git'i kaudu.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TURVALISUS -->
+<!-- ============================================ -->
+<section>
+  <h2>Aga — turvalisus!</h2>
+  <div class="mantra" style="font-size: 0.9em;">
+    Enne spetsialisti ülevaatamist <strong>ära pane päris avalikku netti</strong> äppi,<br>mis kogub isikuandmeid, paroole või maksete infot.
+  </div>
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <p style="color: var(--green); font-weight: 600;">✅ OK avalikuks:</p>
+      <p style="font-size: 0.7em; color: var(--dim);">Meie IdeeTreiler — ei kogu isikuandmeid, ei salvesta midagi, lihtsalt genereerib naljakaid ideid</p>
+    </div>
+    <div>
+      <p style="color: var(--red); font-weight: 600;">🚫 Küsi enne spetsialisti:</p>
+      <p style="font-size: 0.7em; color: var(--dim);">Äpp mis kogub nimesid, e-maile, asukohta, terviseandmeid, paroole vm isikuandmeid</p>
+    </div>
+  </div>
+  <p style="font-size: 0.7em; text-align: center; color: var(--dim); margin-top: 16px;">AI kirjutab koodi kiiresti, aga <strong>võib teha turvavigu</strong> — ja turvavigu ei saa aktsepteerida.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- ÕPPETUND 5 -->
+<!-- ============================================ -->
+<section>
+  <h2>Õppetund #5</h2>
+  <h3>Ambitsiooni reguleerimine</h3>
+  <div class="two-col">
+    <div>
+      <p style="color: var(--red); font-weight: 600;">🚫 Ära küsi:</p>
+      <p style="font-size: 0.7em; color: var(--dim);">"Ehita mulle järgmine Facebook koos reaalajas vestluse, videokõnede, turu, lugude ja AI soovitustega"</p>
+    </div>
+    <div>
+      <p style="color: var(--green); font-weight: 600;">✅ Küsi:</p>
+      <p style="font-size: 0.7em; color: var(--dim);">"Lisa võimalus, et kasutajad saavad oma lemmik startup-ideed nimekirja salvestada"</p>
+    </div>
+  </div>
+  <br>
+  <p style="font-size: 0.8em; text-align: center;">Hea reegel: kui prompt on pikem kui 5 lauset, <strong style="color: var(--accent3);">jaga kaheks</strong>.</p>
+</section>
+
+<!-- ============================================ -->
+<!-- MARKDOWN INTRO -->
+<!-- ============================================ -->
+<section>
+  <h2>Mis on Markdown?</h2>
+  <p style="font-size: 0.85em; color: var(--dim);">Lihtne viis teksti vormindamiseks — ilma Wordi menüüdeta</p>
+  <div class="two-col" style="margin-top: 16px;">
+    <div>
+      <h3>Kirjutad nii:</h3>
+      <pre style="font-size: 0.55em; background: var(--surface); padding: 16px; border-radius: 8px; text-align: left;"><code># Pealkiri
+## Alapealkiri
+
+**Paks tekst** ja *kaldkiri*
+
+- Punkt üks
+- Punkt kaks
+
+[Link](https://näide.ee)</code></pre>
+    </div>
+    <div>
+      <h3>Saad selle:</h3>
+      <div style="font-size: 0.55em; background: var(--surface); padding: 16px; border-radius: 8px; text-align: left;">
+        <h4 style="margin: 0 0 4px;">Pealkiri</h4>
+        <h5 style="margin: 0 0 8px; color: var(--dim);">Alapealkiri</h5>
+        <p style="margin: 4px 0;"><strong>Paks tekst</strong> ja <em>kaldkiri</em></p>
+        <ul style="margin: 4px 0; padding-left: 16px;"><li>Punkt üks</li><li>Punkt kaks</li></ul>
+        <p style="margin: 4px 0;"><a style="color: var(--accent2);">Link</a></p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size: 0.65em; color: var(--dim); margin-top: 12px;">Markdown → Pandoc → Word/HTML/PDF. Seda kasutab kogu IT-maailm: GitHub, Reddit, Discord...</p>
+</section>
+
+<!-- ============================================ -->
+<!-- TASE 5: PITCH DECK -->
+<!-- ============================================ -->
+<section class="center-slide section-divider" data-background-color="#f4f4f5">
+  <p style="font-size:2.5em;">📄</p>
+  <h2>Tase 5</h2>
+  <p style="color: var(--dim);">Pitch Deck — AI + Pandoc</p>
+</section>
+
+<section>
+  <h2>Tase 5: Pitch Deck</h2>
+  <p style="font-size: 0.8em; color: var(--dim);">AI genereerib Markdowni → Pandoc teeb sellest professionaalse dokumendi</p>
+  <div class="prompt-box good-prompt" style="font-size: 0.55em;">
+Loo fail pitch.md minu startup-idee kohta. Kirjuta Markdowni formaadis professionaalne ühe-leheküljelise pitch-dokumendi sisu: startupi nimi, loosung, probleem, lahendus, sihtrühm, ärimudel ja meeskond (mina). Kasuta minu viimast genereeritud ideed. Lisa emojid pealkirjadesse.
+  </div>
+  <p style="font-size: 0.75em; margin-top: 16px;">Seejärel terminalis:</p>
+  <div class="step-box">
+    <p><code style="font-size: 0.9em; color: var(--green);">pandoc pitch.md -o pitch.docx</code></p>
+  </div>
+  <p style="font-size: 0.65em; color: var(--dim); margin-top: 8px;">Tulemus: professionaalne Word-dokument, mida saad kellelegi saata!</p>
+</section>
+
+<section>
+  <h2>Õppetund #6</h2>
+  <h3>Tööriistaahel</h3>
+  <div class="quote-box" style="font-size: 0.85em;">
+    AI ei pea kõike ise tegema.<br>
+    AI genereerib <strong>sisu</strong>, Pandoc teeb sellest <strong>kauni dokumendi</strong>.<br><br>
+    Seda nimetatakse <strong style="color: var(--accent2);">tööriistaahelaks</strong>.
+  </div>
+  <div class="card-grid" style="margin-top: 20px;">
+    <div class="card">
+      <h4>.md → .docx</h4>
+      <p><code>pandoc pitch.md -o pitch.docx</code><br>Word-dokument</p>
+    </div>
+    <div class="card">
+      <h4>.md → .html</h4>
+      <p><code>pandoc pitch.md -o pitch.html</code><br>Veebileht</p>
+    </div>
+    <div class="card">
+      <h4>.md → .pdf</h4>
+      <p><code>pandoc pitch.md -o pitch.pdf</code><br>Vajab LaTeX-i (boonusülesanne)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- LÕPURING -->
+<!-- ============================================ -->
+
+
+<section>
+  <h2>Mõtleme koos</h2>
+  <br>
+  <p style="font-size: 1.1em; color: var(--accent2);">Mis üllatas kõige rohkem?</p>
+  <br>
+  <p style="font-size: 1.1em; color: var(--accent3);">Kus jäi AI hätta?</p>
+  <br>
+  <p style="font-size: 1.1em; color: var(--accent);">Mida te ehitaksite, kui teil oleks nädal aega?</p>
+</section>
+
+<section>
+  <h2>Suurem pilt</h2>
+  <div class="quote-box">
+    Kaamera ei asendanud kunstnikke.<br>
+    Excel ei asendanud raamatupidajaid.<br>
+    AI ei asenda programmeerijaid.<br><br>
+    Aga need kõik andsid <strong>uutele inimestele uued võimalused</strong>.
+  </div>
+  <br>
+  <p style="font-size: 0.85em; text-align: center;">Te ei õppinud täna programmeerima.<br>
+  Te õppisite <strong style="color: var(--accent2);">AI-ga koostööd tegema</strong>.<br>
+  <span style="color: var(--accent3);">See on 2026. aasta tähtsaim oskus.</span></p>
+</section>
+
+<section>
+  <h2>Edasi õppimiseks</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Google Antigravity</h4>
+      <p>antigravity.google<br>codelabs.developers.google.com</p>
+    </div>
+    <div class="card">
+      <h4>ChatGPT Codex</h4>
+      <p>chatgpt.com/codex<br>Hetkel tasuta!</p>
+    </div>
+    <div class="card">
+      <h4>Seminari materjalid</h4>
+      <p>seppo.ai/tartucode/<strong>slaidid.html</strong><br>seppo.ai/tartucode/<strong>handout.html</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- LÕPUSLAID -->
+<!-- ============================================ -->
+<section class="center-slide" data-background-color="#fafafa">
+  <p style="font-size:2em;">🚀</p>
+  <h1 style="font-size: 1.4em;"><span class="gradient-text">Te ehitasite täna äpi.<br>Nullist. Kolme tunniga.</span></h1>
+  <br>
+  <p style="font-size: 1em; color: #475569;">Mõelge, mida te saate ehitada<br><strong style="color: var(--accent3); font-size: 1.3em;">kolme nädalaga.</strong></p>
+  <br>
+  <p style="font-size: 0.7em; color: var(--dim);">Aitäh! 🎉</p>
+</section>
+
+<!-- ============================================ -->
+<!-- LISA: JÄRELEJÕUDMISE PROMPTID -->
+<!-- ============================================ -->
+<section>
+  <h2>Lisa: Järelejõudmise promptid</h2>
+  <p style="font-size: 0.7em; color: var(--dim);">Kui jäid maha — kopeeri vastav prompt:</p>
+  <div class="step-box" style="font-size: 0.6em;">
+    <strong style="color: var(--accent);">Tase 1:</strong><br>
+    "Loo Next.js veebirakendus nimega 'IdeeTreiler'. Kolme sisestusväljaga (nimi, eriala, hobid), genereerimise nupuga ja näita juhuslikku naljakat startup-ideed eelkirjutatud nimekirjast. Tume teema."
+  </div>
+  <div class="step-box" style="font-size: 0.6em;">
+    <strong style="color: var(--accent2);">Tase 2:</strong><br>
+    "Mu äpil on vorm ja genereerimise nupp. Lisa Gemini API, et see genereeriks kasutaja sisendi põhjal naljakaid startup-ideid. Loe API võti .env.local failist (muutuja GEMINI_API_KEY). Näita tulemusi ilusas kaardikujunduses."
+  </div>
+  <div class="step-box" style="font-size: 0.6em;">
+    <strong style="color: var(--accent3);">Tase 3:</strong><br>
+    "Lisa hullumeelsuse taseme liugur (5 taset: 'Peaaegu reaalne' kuni 'Mis ma just lugesin'), mis muudab seda, kui hullud genereeritud startup-ideed on."
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- LISA: PÕHIMANTRAD -->
+<!-- ============================================ -->
+<section>
+  <h2>Lisa: Põhimantrad</h2>
+  <div class="two-col" style="font-size: 0.75em;">
+    <div>
+      <p style="margin: 8px 0;">🎯 <strong>Mida täpsemalt kirjeldad, seda parem tulemus</strong></p>
+      <p style="margin: 8px 0;">1️⃣ <strong>Üks prompt = üks asi</strong></p>
+      <p style="margin: 8px 0;">🔧 <strong>Sa ei pea teadma KUIDAS parandada. Ainult MIS on valesti.</strong></p>
+      <p style="margin: 8px 0;">🔄 <strong>Esimene katse pole kunagi täiuslik — ja see on OK</strong></p>
+    </div>
+    <div>
+      <p style="margin: 8px 0;">🧪 <strong>Väikesed muudatused, sage testimine</strong></p>
+      <p style="margin: 8px 0;">💾 <strong>Salvesta töötav olek tihti</strong></p>
+      <p style="margin: 8px 0;">📏 <strong>Kui prompt on pikem kui 5 lauset, jaga kaheks</strong></p>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  slideNumber: true,
+  transition: 'slide',
+  transitionSpeed: 'default',
+  controls: true,
+  progress: true,
+  center: false,
+  width: 1280,
+  height: 720,
+  margin: 0.04,
+  plugins: [RevealHighlight]
+});
+</script>
+</body>
+</html>
